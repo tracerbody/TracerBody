@@ -1,2 +1,0 @@
-Sample dataset (legal demo)\n
-This is a tiny text file included as an example. Replace with legally obtained research datasets or delete.
