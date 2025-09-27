@@ -1,1 +1,2 @@
-## This is just a readme for the website. check out the website instead
+# TracerBody
+TracerBody is a cybersecurity research site. Build instructions here.
