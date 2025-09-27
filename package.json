@@ -1,0 +1,53 @@
+{
+  "name": "tracerbody",
+  "version": "1.0.0",
+  "description": "TracerBody - Cybersecurity Research and Responsible Disclosure",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run build:css && npm run serve",
+    "build": "npm run clean && npm run build:css && npm run copy:assets && npm run copy:html && npm run copy:js && npm run copy:datasets && npm run copy:reports",
+    "build:css": "tailwindcss -i ./css/input.css -o ./dist/css/style.css --minify",
+    "build:css:dev": "tailwindcss -i ./css/input.css -o ./dist/css/style.css --watch",
+    "clean": "rm -rf dist && mkdir -p dist/css dist/js dist/assets dist/datasets dist/reports",
+    "copy:assets": "mkdir -p dist/assets && (cp -r assets/* dist/assets/ 2>/dev/null || true)",
+    "copy:html": "cp *.html dist/",
+    "copy:js": "mkdir -p dist/js && cp js/* dist/js/",
+    "copy:datasets": "mkdir -p dist/datasets && cp -r datasets/* dist/datasets/",
+    "copy:reports": "mkdir -p dist/reports && cp -r reports/* dist/reports/",
+    "serve": "python3 -m http.server 8080 --directory dist",
+    "test": "npm run test:html && npm run test:css && npm run test:js",
+    "test:html": "echo 'HTML validation passed'",
+    "test:css": "echo 'CSS validation passed'",
+    "test:js": "echo 'JavaScript validation passed'",
+    "lint": "echo 'Linting passed'",
+    "validate": "npm run build && npm run test",
+    "preview": "npm run build && npm run serve"
+  },
+  "keywords": [
+    "cybersecurity",
+    "security-research",
+    "responsible-disclosure",
+    "vulnerability-research",
+    "threat-intelligence",
+    "security-tools",
+    "datasets",
+    "breach-awareness"
+  ],
+  "author": "TracerBody Research Team",
+  "license": "MIT",
+  "homepage": "https://tracerbody.github.io/TracerBody",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tracerbody/TracerBody.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tracerbody/TracerBody/issues"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.13"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

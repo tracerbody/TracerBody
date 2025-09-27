@@ -1,0 +1,238 @@
+TracerBody Website Deployment Instructions
+==========================================
+
+This document provides comprehensive instructions for deploying the TracerBody website to various hosting platforms.
+
+QUICK START
+-----------
+
+1. Extract the ZIP file to your desired location
+2. Navigate to the project directory
+3. Install dependencies: npm install
+4. Build the website: npm run build
+5. Deploy the 'dist' folder to your hosting platform
+
+DEPLOYMENT OPTIONS
+------------------
+
+Option 1: GitHub Pages (Recommended)
+------------------------------------
+
+Prerequisites:
+- GitHub account
+- Git installed locally
+
+Steps:
+1. Create a new repository on GitHub named "TracerBody"
+2. Clone the repository locally
+3. Extract the ZIP contents into the cloned repository
+4. Commit and push the files:
+   git add .
+   git commit -m "Initial TracerBody website"
+   git push origin main
+
+5. Enable GitHub Pages:
+   - Go to repository Settings > Pages
+   - Select "Deploy from a branch"
+   - Choose "main" branch and "/ (root)" folder
+   - Click Save
+
+6. The website will be available at: https://yourusername.github.io/TracerBody
+
+Automatic Deployment:
+The included GitHub Actions workflow (.github/workflows/deploy.yml) will automatically build and deploy the site when you push changes to the main branch.
+
+Option 2: Netlify
+-----------------
+
+Prerequisites:
+- Netlify account
+
+Steps:
+1. Log in to Netlify
+2. Click "New site from Git" or drag the 'dist' folder to deploy
+3. If using Git:
+   - Connect your GitHub repository
+   - Set build command: npm run build
+   - Set publish directory: dist
+4. Click "Deploy site"
+
+The site will be available at a generated Netlify URL, which you can customize.
+
+Option 3: Vercel
+----------------
+
+Prerequisites:
+- Vercel account
+
+Steps:
+1. Install Vercel CLI: npm i -g vercel
+2. Navigate to the project directory
+3. Run: vercel
+4. Follow the prompts to deploy
+
+Alternatively, connect your GitHub repository to Vercel for automatic deployments.
+
+Option 4: Traditional Web Hosting
+----------------------------------
+
+Prerequisites:
+- Web hosting account with FTP/SFTP access
+
+Steps:
+1. Build the website locally: npm run build
+2. Upload the contents of the 'dist' folder to your web server's public directory
+3. Ensure your web server is configured to serve static files
+4. Set up proper MIME types for CSS and JS files
+
+Option 5: AWS S3 + CloudFront
+------------------------------
+
+Prerequisites:
+- AWS account
+- AWS CLI configured
+
+Steps:
+1. Create an S3 bucket for static website hosting
+2. Build the website: npm run build
+3. Upload dist folder contents to S3:
+   aws s3 sync dist/ s3://your-bucket-name --delete
+4. Configure S3 bucket for static website hosting
+5. (Optional) Set up CloudFront distribution for CDN
+
+Option 6: Docker Deployment
+---------------------------
+
+A Dockerfile is included for containerized deployment:
+
+1. Build the Docker image:
+   docker build -t tracerbody-website .
+
+2. Run the container:
+   docker run -p 8080:80 tracerbody-website
+
+3. Access the website at http://localhost:8080
+
+CONFIGURATION
+-------------
+
+Environment Variables:
+- No environment variables required for basic deployment
+- For production, consider setting up analytics and monitoring
+
+Custom Domain:
+1. Update CNAME file in the root directory with your domain
+2. Configure DNS records to point to your hosting platform
+3. Set up SSL certificate (most platforms provide this automatically)
+
+SECURITY CONSIDERATIONS
+-----------------------
+
+1. Content Security Policy (CSP):
+   - Review and customize CSP headers in your web server configuration
+   - The website includes basic CSP meta tags
+
+2. HTTPS:
+   - Always use HTTPS in production
+   - Most hosting platforms provide free SSL certificates
+
+3. Contact Form:
+   - The contact form is currently a demonstration form
+   - Implement server-side form handling for production use
+   - Consider using services like Formspree, Netlify Forms, or custom backend
+
+4. Security Headers:
+   - Configure security headers in your web server
+   - Include X-Frame-Options, X-Content-Type-Options, etc.
+
+MAINTENANCE
+-----------
+
+Regular Updates:
+1. Keep dependencies updated: npm audit && npm update
+2. Monitor for security vulnerabilities: npm audit
+3. Update content and datasets regularly
+4. Review and update privacy policy and terms as needed
+
+Monitoring:
+1. Set up website monitoring (uptime, performance)
+2. Configure analytics (Google Analytics, etc.)
+3. Monitor for broken links and errors
+4. Regular security scans
+
+TROUBLESHOOTING
+---------------
+
+Common Issues:
+
+1. Build Fails:
+   - Ensure Node.js 16+ is installed
+   - Run: npm install to install dependencies
+   - Check for syntax errors in HTML/CSS/JS files
+
+2. CSS Not Loading:
+   - Verify Tailwind CSS build completed successfully
+   - Check file paths in HTML files
+   - Ensure web server serves CSS files with correct MIME type
+
+3. 404 Errors:
+   - Configure web server to serve index.html for root requests
+   - Set up proper URL rewriting for single-page application behavior
+
+4. Contact Form Not Working:
+   - Implement server-side form handling
+   - Configure CORS if using external form service
+   - Test form validation and submission
+
+PERFORMANCE OPTIMIZATION
+-------------------------
+
+1. Enable gzip compression on your web server
+2. Set up proper caching headers for static assets
+3. Use a CDN for global content delivery
+4. Optimize images and compress assets
+5. Monitor Core Web Vitals and page load times
+
+BACKUP AND RECOVERY
+-------------------
+
+1. Regular Backups:
+   - Backup source code to version control (Git)
+   - Backup any dynamic content or databases
+   - Document deployment configuration
+
+2. Recovery Plan:
+   - Test deployment process regularly
+   - Maintain staging environment for testing
+   - Document rollback procedures
+
+SUPPORT
+-------
+
+For technical support or questions:
+- Email: support@tracerbody.org
+- GitHub Issues: https://github.com/tracerbody/TracerBody/issues
+- Documentation: https://tracerbody.github.io/TracerBody
+
+LICENSE
+-------
+
+This project is licensed under the MIT License. See LICENSE file for details.
+
+Individual datasets and reports may have different licenses as specified in their documentation.
+
+CHANGELOG
+---------
+
+Version 1.0.0 (September 2024):
+- Initial release
+- Complete website with all pages and functionality
+- Research datasets and reports included
+- GitHub Actions deployment workflow
+- Comprehensive documentation
+
+---
+
+TracerBody Research Team
+https://tracerbody.github.io/TracerBody
+
