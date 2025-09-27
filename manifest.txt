@@ -1,0 +1,63 @@
+TracerBody Website - File Manifest
+===================================
+
+This file contains a complete list of all files included in the TracerBody website package.
+Generated on: September 27, 2024
+Version: 1.0.0
+
+Source Files:
+./.github/workflows/ci.yml
+./.github/workflows/deploy.yml
+./.gitignore
+./CODE_OF_CONDUCT.md
+./CONTRIBUTING.md
+./DEPLOYMENT.txt
+./LICENSE
+./README.md
+./about.html
+./assets/favicon.png
+./assets/favicon.svg
+./assets/logo.png
+./contact.html
+./css/input.css
+./datasets.html
+./datasets/network-traffic-anomalies-readme.txt
+./datasets/network-traffic-anomalies.csv
+./datasets/web-vuln-patterns-readme.txt
+./datasets/web-vuln-patterns.csv
+./dist/about.html
+./dist/assets/favicon.png
+./dist/assets/favicon.svg
+./dist/assets/logo.png
+./dist/contact.html
+./dist/css/style.css
+./dist/datasets.html
+./dist/datasets/network-traffic-anomalies-readme.txt
+./dist/datasets/network-traffic-anomalies.csv
+./dist/datasets/web-vuln-patterns-readme.txt
+./dist/datasets/web-vuln-patterns.csv
+./dist/index.html
+./dist/js/main.js
+./dist/privacy.html
+./dist/reports/q3-2024-threat-landscape.md
+./dist/reports/q3-2024-threat-landscape.pdf
+./dist/reports/web-app-security-assessment.md
+./dist/reports/web-app-security-assessment.pdf
+./dist/research.html
+./dist/responsible-disclosure.html
+./dist/tools.html
+./index.html
+./js/main.js
+./lighthouserc.json
+./manifest.txt
+./package-lock.json
+./package.json
+./privacy.html
+./reports/q3-2024-threat-landscape.md
+./reports/q3-2024-threat-landscape.pdf
+./reports/web-app-security-assessment.md
+./reports/web-app-security-assessment.pdf
+./research.html
+./responsible-disclosure.html
+./tailwind.config.js
+./tools.html
