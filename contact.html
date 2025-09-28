@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - TracerBody Data Breach Archive</title>
-    <meta name="description" content="Contact TracerBody for inquiries, support, or to report new data breaches. Find us on Telegram and Discord.">
+    <meta name="description" content="Get in touch with TracerBody for data breach inquiries, support, or to report new breaches.">
     
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="contact, TracerBody, data breach, support, Telegram, Discord, report breach">
+    <meta name="keywords" content="contact, support, data breach, TracerBody, telegram, discord">
     <meta name="author" content="TracerBody">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Contact Us - TracerBody Data Breach Archive">
-    <meta property="og:description" content="Contact TracerBody for inquiries, support, or to report new data breaches.">
+    <meta property="og:description" content="Get in touch with TracerBody for data breach inquiries, support, or to report new breaches.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tracerbody.github.io/TracerBody/contact.html">
     <meta property="og:image" content="https://tracerbody.github.io/TracerBody/assets/logo.png">
@@ -175,6 +175,35 @@
             to { box-shadow: 0 0 30px rgba(220, 38, 38, 0.6); }
         }
         
+        .contact-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid transparent;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-left-color: var(--primary-red);
+        }
+        
+        .contact-link {
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .contact-link:hover {
+            background: rgba(220, 38, 38, 0.2);
+            border-color: var(--primary-red);
+            transform: translateX(5px);
+        }
+        
         /* Scrollbar styling */
         ::-webkit-scrollbar {
             width: 8px;
@@ -229,10 +258,10 @@
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 glass">
-                <a href="./index.html" class="text-white block px-3 py-2 text-base font-medium">Archive</a>
+                <a href="./index.html" class="text-gray-300 hover:text-orange-400 block px-3 py-2 text-base font-medium">Archive</a>
                 <a href="./upload.html" class="text-gray-300 hover:text-orange-400 block px-3 py-2 text-base font-medium">Upload</a>
                 <a href="./stats.html" class="text-gray-300 hover:text-orange-400 block px-3 py-2 text-base font-medium">Statistics</a>
-                <a href="./contact.html" class="text-gray-300 hover:text-orange-400 block px-3 py-2 text-base font-medium">Contact</a>
+                <a href="./contact.html" class="text-white block px-3 py-2 text-base font-medium">Contact</a>
             </div>
         </div>
     </nav>
@@ -242,57 +271,57 @@
         <div class="max-w-4xl mx-auto text-center">
             <div class="glass rounded-2xl p-12 fade-in-up">
                 <h1 class="text-5xl md:text-6xl font-bold gradient-text mb-6">Contact Us</h1>
-                <p class="text-xl text-gray-300 mb-8">
+                <p class="text-xl text-gray-300 mb-12">
                     Have questions, need support, or want to report a new data breach? Reach out to us through the following channels.
                 </p>
                 
-                <div class="grid md:grid-cols-2 gap-8 text-left">
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-white mb-2">Direct Messaging</h3>
-                        <p class="text-gray-300">For quick inquiries or direct communication, you can find us on:</p>
-                        <ul class="space-y-3">
-                            <li>
-                                <a href="https://t.me/AtomicSS0" target="_blank" class="flex items-center text-gray-300 hover:text-orange-400 transition-colors duration-200">
-                                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                                    </svg>
-                                    Telegram: <span class="font-semibold mono ml-1">@AtomicSS0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://discord.com/users/somebodydude" target="_blank" class="flex items-center text-gray-300 hover:text-orange-400 transition-colors duration-200">
-                                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
-                                    </svg>
-                                    Discord: <span class="font-semibold mono ml-1">somebodydude</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-white mb-2">General Inquiries</h3>
-                        <p class="text-gray-300">For other questions or formal communication, please use the form below:</p>
-                        <form class="space-y-4">
-                            <div>
-                                <label for="name" class="block text-gray-400 text-sm font-bold mb-2">Name</label>
-                                <input type="text" id="name" name="name" required
-                                       class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-gray-400 text-sm font-bold mb-2">Email</label>
-                                <input type="email" id="email" name="email" required
-                                       class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-gray-400 text-sm font-bold mb-2">Message</label>
-                                <textarea id="message" name="message" rows="5" required
-                                          class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary w-full py-3 rounded-lg font-semibold text-lg">
-                                Send Message
-                            </button>
-                        </form>
+                <div class="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+                    <div class="contact-card glass rounded-xl p-8">
+                        <h2 class="text-3xl font-bold text-white mb-6">Direct Contact</h2>
+                        <p class="text-gray-300 mb-8">
+                            For quick inquiries, direct communication, or to report new breaches, you can find us on:
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <!-- Telegram Contact -->
+                            <a href="https://t.me/AtomicSS0" target="_blank" class="contact-link">
+                                <svg class="w-6 h-6 mr-4 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                </svg>
+                                <div class="text-left">
+                                    <div class="font-semibold text-white">Telegram</div>
+                                    <div class="text-gray-300 text-sm">@AtomicSS0</div>
+                                </div>
+                            </a>
+                            
+                            <!-- Discord Personal Contact -->
+                            <a href="https://discord.com/users/somebodydude" target="_blank" class="contact-link">
+                                <svg class="w-6 h-6 mr-4 text-indigo-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
+                                </svg>
+                                <div class="text-left">
+                                    <div class="font-semibold text-white">Discord</div>
+                                    <div class="text-gray-300 text-sm">somebodydude</div>
+                                </div>
+                            </a>
+                            
+                            <!-- Discord Server -->
+                            <a href="https://discord.gg/hsXT4XrQ4x" target="_blank" class="contact-link">
+                                <svg class="w-6 h-6 mr-4 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
+                                </svg>
+                                <div class="text-left">
+                                    <div class="font-semibold text-white">Discord Server</div>
+                                    <div class="text-gray-300 text-sm">LeakHub Community</div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-8 p-4 bg-gray-800 rounded-lg border border-gray-700">
+                            <p class="text-gray-300 text-sm">
+                                <strong>Note:</strong> We respond fastest on Telegram and Discord. For community discussions and support, join our Discord server LeakHub where you can interact with other security researchers and get help from the community.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -317,33 +346,9 @@
                         <a href="https://discord.com/users/somebodydude" target="_blank" class="text-gray-400 hover:text-orange-400 transition-colors duration-200">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
-                                    </svg>
-                                    Discord: <span class="font-semibold mono ml-1">somebodydude</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="glass mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="col-span-2">
-                    <h3 class="text-2xl font-bold gradient-text mb-4">TracerBody</h3>
-                    <p class="text-gray-300 mb-4">
-                        Comprehensive data breach archive for security research, awareness, and educational purposes.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://t.me/AtomicSS0" target="_blank" class="text-gray-400 hover:text-orange-400 transition-colors duration-200">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                             </svg>
                         </a>
-                        <a href="https://discord.com/users/somebodydude" target="_blank" class="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+                        <a href="https://discord.gg/hsXT4XrQ4x" target="_blank" class="text-gray-400 hover:text-orange-400 transition-colors duration-200">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
                             </svg>
@@ -371,7 +376,7 @@
                     <ul class="space-y-2">
                         <li><a href="https://t.me/AtomicSS0" target="_blank" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Telegram: @AtomicSS0</a></li>
                         <li><a href="https://discord.com/users/somebodydude" target="_blank" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Discord: somebodydude</a></li>
-                        <li><a href="./contact.html" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Contact Form</a></li>
+                        <li><a href="https://discord.gg/hsXT4XrQ4x" target="_blank" class="text-gray-300 hover:text-orange-400 transition-colors duration-200">Server: LeakHub</a></li>
                     </ul>
                 </div>
             </div>
@@ -387,5 +392,33 @@
 
     <!-- JavaScript -->
     <script src="./js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('svg');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        icon.style.transform = 'rotate(90deg)';
+                    }
+                });
+            }
+            
+            // Fade in animation
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 300);
+        });
+    </script>
 </body>
 </html>

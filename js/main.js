@@ -104,7 +104,8 @@ class BreachArchive {
                 severity: "high",
                 type: "Credit Bureau",
                 description: "Personal information of 147 million consumers exposed including SSNs, birth dates, addresses, and driver's license numbers.",
-                downloadUrl: "./breaches/equifax-2017.zip",
+                downloadUrl: "https://mega.nz/file/example1",
+                password: "equifax2017!",
                 size: "2.3 GB",
                 date: "2017-09-07",
                 tags: ["SSN", "Personal Data", "Credit"]
@@ -117,7 +118,8 @@ class BreachArchive {
                 severity: "high",
                 type: "Web Services",
                 description: "All 3 billion Yahoo accounts compromised. Names, email addresses, telephone numbers, dates of birth, hashed passwords, and security questions exposed.",
-                downloadUrl: "./breaches/yahoo-2013.zip",
+                downloadUrl: "https://drive.google.com/file/d/example2",
+                password: "yahoo_breach_2013",
                 size: "5.7 GB",
                 date: "2013-08-01",
                 tags: ["Email", "Passwords", "Personal Data"]
@@ -130,7 +132,8 @@ class BreachArchive {
                 severity: "high",
                 type: "Hospitality",
                 description: "Guest information from Starwood hotels database including names, addresses, phone numbers, email addresses, passport numbers, and payment card information.",
-                downloadUrl: "./breaches/marriott-2018.zip",
+                downloadUrl: "https://dropbox.com/s/example3",
+                password: "marriott_starwood18",
                 size: "1.8 GB",
                 date: "2018-11-30",
                 tags: ["Travel", "Payment Cards", "Passports"]
@@ -143,7 +146,8 @@ class BreachArchive {
                 severity: "medium",
                 type: "Financial",
                 description: "Personal information of credit card customers and applicants including names, addresses, credit scores, payment history, and fragments of transaction data.",
-                downloadUrl: "./breaches/capitalone-2019.zip",
+                downloadUrl: "https://mega.nz/file/example4",
+                password: "capital1_2019",
                 size: "890 MB",
                 date: "2019-07-19",
                 tags: ["Credit Cards", "Financial", "Credit Scores"]
@@ -156,7 +160,8 @@ class BreachArchive {
                 severity: "medium",
                 type: "Social Media",
                 description: "Phone numbers, Facebook IDs, full names, locations, birthdates, bios, and email addresses of Facebook users from 106 countries.",
-                downloadUrl: "./breaches/facebook-2019.zip",
+                downloadUrl: "https://drive.google.com/file/d/example5",
+                password: "fb_leak2019",
                 size: "1.2 GB",
                 date: "2019-04-03",
                 tags: ["Social Media", "Phone Numbers", "Personal Data"]
@@ -169,7 +174,8 @@ class BreachArchive {
                 severity: "medium",
                 type: "Professional Network",
                 description: "Scraped data including email addresses, phone numbers, workplace information, full names, account IDs, and links to social media accounts.",
-                downloadUrl: "./breaches/linkedin-2021.zip",
+                downloadUrl: "https://dropbox.com/s/example6",
+                password: "linkedin_scrape21",
                 size: "2.1 GB",
                 date: "2021-06-22",
                 tags: ["Professional", "Email", "Phone Numbers"]
@@ -182,7 +188,8 @@ class BreachArchive {
                 severity: "high",
                 type: "Telecommunications",
                 description: "Names, dates of birth, SSNs, and driver's license information of current, former and prospective T-Mobile customers.",
-                downloadUrl: "./breaches/tmobile-2021.zip",
+                downloadUrl: "https://mega.nz/file/example7",
+                password: "tmobile_breach21",
                 size: "650 MB",
                 date: "2021-08-17",
                 tags: ["Telecom", "SSN", "Driver's License"]
@@ -195,7 +202,8 @@ class BreachArchive {
                 severity: "low",
                 type: "Social Audio",
                 description: "User profile information including names, usernames, photo URLs, follower counts, and account creation dates.",
-                downloadUrl: "./breaches/clubhouse-2021.zip",
+                downloadUrl: "https://drive.google.com/file/d/example8",
+                password: "clubhouse_2021",
                 size: "45 MB",
                 date: "2021-04-11",
                 tags: ["Social Media", "Audio", "Profiles"]
@@ -265,11 +273,17 @@ class BreachArchive {
                         </svg>
                         <span class="text-gray-300">${breach.size}</span>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center mb-2">
                         <svg class="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a4 4 0 118 0v4m-4 8a2 2 0 100-4 2 2 0 000 4zm6 0a2 2 0 100-4 2 2 0 000 4z"></path>
                         </svg>
                         <span class="text-gray-400 text-sm">${this.formatDate(breach.date)}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-4 h-4 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-green-400 font-mono text-sm">Password: ${breach.password}</span>
                     </div>
                 </div>
                 
@@ -292,7 +306,7 @@ class BreachArchive {
                         </svg>
                         View Details
                     </button>
-                    <button onclick="breachArchive.downloadBreach(${breach.id})" 
+                    <button onclick="breachArchive.downloadBreach('${breach.downloadUrl}')" 
                             class="btn-secondary text-white px-4 py-2 rounded-lg font-semibold text-sm">
                         <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -344,29 +358,21 @@ class BreachArchive {
                             </div>
                             <div>
                                 <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-1">Severity</h4>
-                                <span class="severity-${breach.severity} text-lg font-semibold uppercase tracking-wide">
-                                    ${breach.severity}
-                                </span>
+                                <span class="severity-${breach.severity} text-lg font-semibold uppercase">${breach.severity}</span>
                             </div>
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-1">Date Discovered</h4>
-                                <p class="text-white">${this.formatDate(breach.date)}</p>
+                                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-1">File Size</h4>
+                                <p class="text-lg text-white">${breach.size}</p>
                             </div>
                         </div>
                         <div class="space-y-4">
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-1">File Size</h4>
-                                <p class="text-white">${breach.size}</p>
+                                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-1">Date Discovered</h4>
+                                <p class="text-lg text-white">${this.formatDate(breach.date)}</p>
                             </div>
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-1">Data Types</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    ${breach.tags.map(tag => `
-                                        <span class="px-2 py-1 bg-red-900/30 text-red-300 text-xs rounded-full border border-red-700/30">
-                                            ${tag}
-                                        </span>
-                                    `).join('')}
-                                </div>
+                                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-1">ZIP Password</h4>
+                                <p class="text-lg text-green-400 font-mono bg-gray-800 px-3 py-2 rounded border border-green-700/30">${breach.password}</p>
                             </div>
                         </div>
                     </div>
@@ -376,17 +382,31 @@ class BreachArchive {
                         <p class="text-gray-300 leading-relaxed">${breach.description}</p>
                     </div>
                     
-                    <div class="flex gap-3">
-                        <button onclick="breachArchive.downloadBreach(${breach.id})" 
-                                class="btn-primary text-white px-6 py-3 rounded-lg font-semibold">
+                    <div class="mb-6">
+                        <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-3">Data Types</h4>
+                        <div class="flex flex-wrap gap-2">
+                            ${breach.tags.map(tag => `
+                                <span class="px-3 py-1 bg-red-900/30 text-red-300 text-sm rounded-full border border-red-700/30">
+                                    ${tag}
+                                </span>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <button onclick="breachArchive.downloadBreach('${breach.downloadUrl}')" 
+                                class="btn-primary flex-1 px-6 py-3 rounded-lg font-semibold">
                             <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
                             Download Archive
                         </button>
-                        <button onclick="this.parentElement.parentElement.parentElement.parentElement.remove()" 
-                                class="btn-secondary text-white px-6 py-3 rounded-lg font-semibold">
-                            Close
+                        <button onclick="breachArchive.copyPassword('${breach.password}')" 
+                                class="btn-secondary px-6 py-3 rounded-lg font-semibold">
+                            <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                            Copy Password
                         </button>
                     </div>
                 </div>
@@ -394,88 +414,93 @@ class BreachArchive {
         `;
 
         document.body.appendChild(modal);
-        
-        // Close on outside click
+
+        // Close modal on background click
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.remove();
             }
         });
+
+        // Close modal on escape key
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                modal.remove();
+                document.removeEventListener('keydown', handleEscape);
+            }
+        };
+        document.addEventListener('keydown', handleEscape);
     }
 
-    downloadBreach(id) {
-        const breach = this.breaches.find(b => b.id === id);
-        if (!breach) return;
+    downloadBreach(url) {
+        // Open download link in new tab
+        window.open(url, '_blank');
+        this.showNotification('Opening download link in new tab...', 'info');
+    }
 
-        // Show download confirmation
-        const confirmed = confirm(`Download ${breach.company} breach data (${breach.size})?\n\nThis archive contains sensitive data for research purposes only.`);
-        
-        if (confirmed) {
-            // Create temporary download link
-            const link = document.createElement('a');
-            link.href = breach.downloadUrl;
-            link.download = `${breach.company.toLowerCase()}-${breach.year}-breach.zip`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Show notification
-            this.showNotification(`Download started: ${breach.company} (${breach.year})`, 'success');
-        }
+    copyPassword(password) {
+        navigator.clipboard.writeText(password).then(() => {
+            this.showNotification('Password copied to clipboard!', 'success');
+        }).catch(() => {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = password;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            this.showNotification('Password copied to clipboard!', 'success');
+        });
     }
 
     showNotification(message, type = 'info') {
         const notification = document.createElement('div');
-        notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out`;
-        
-        switch(type) {
-            case 'success':
-                notification.classList.add('bg-green-600', 'text-white');
-                break;
-            case 'error':
-                notification.classList.add('bg-red-600', 'text-white');
-                break;
-            case 'warning':
-                notification.classList.add('bg-yellow-600', 'text-white');
-                break;
-            default:
-                notification.classList.add('bg-blue-600', 'text-white');
-        }
-        
+        notification.className = `notification fixed top-4 right-4 z-50 px-6 py-4 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 ${
+            type === 'success' ? 'bg-green-600 text-white' : 
+            type === 'error' ? 'bg-red-600 text-white' : 
+            'bg-blue-600 text-white'
+        }`;
         notification.innerHTML = `
             <div class="flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    ${type === 'success' ? 
+                        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>' :
+                        type === 'error' ? 
+                        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>' :
+                        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+                    }
+                </svg>
                 <span>${message}</span>
-                <button class="ml-4 text-white hover:text-gray-200" onclick="this.parentElement.parentElement.remove()">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
             </div>
         `;
-        
+
         document.body.appendChild(notification);
-        
+
+        // Slide in
         setTimeout(() => {
             notification.classList.remove('translate-x-full');
+            notification.classList.add('translate-x-0');
         }, 100);
-        
+
+        // Slide out and remove
         setTimeout(() => {
+            notification.classList.remove('translate-x-0');
             notification.classList.add('translate-x-full');
             setTimeout(() => {
-                if (notification.parentElement) {
-                    notification.remove();
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
                 }
             }, 300);
-        }, 4000);
+        }, 3000);
     }
 
     setupAnimations() {
-        // Intersection Observer for animations
+        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -483,12 +508,13 @@ class BreachArchive {
                 }
             });
         }, observerOptions);
-        
+
+        // Observe all fade-in elements
         document.querySelectorAll('.fade-in-up').forEach(el => {
             observer.observe(el);
         });
 
-        // Parallax effect
+        // Parallax effect for hero section
         let ticking = false;
         
         const updateParallax = () => {
@@ -496,8 +522,9 @@ class BreachArchive {
             const parallaxElements = document.querySelectorAll('.hero-bg');
             
             parallaxElements.forEach(element => {
-                const speed = scrolled * 0.3;
-                element.style.transform = `translateY(${speed}px)`;
+                const speed = 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
             });
             
             ticking = false;
