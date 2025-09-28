@@ -12,6 +12,7 @@ class BreachArchive {
         this.setupEventListeners();
         await this.loadBreaches();
         this.setupAnimations();
+        // Always update stats - let the function handle if elements exist
         this.updateStats();
     }
 
@@ -97,18 +98,116 @@ class BreachArchive {
     getSampleBreaches() {
         return [
             {
-                "id": 1,
-                "company": "Facebook",
-                "year": 2021,
-                "records": 533000000,
-                "severity": "high",
-                "type": "Social Media",
-                "description": "A data breach affecting Facebook users, exposing personal information such as phone numbers, Facebook IDs, names, locations, birthdates, and email addresses. The data was scraped from Facebook profiles.",
-                "downloadUrl": "https://biteblob.com/Information/NDHTTDKoMDYXU1/#Facebook.7z",
-                "password": "No Password Set",
-                "size": "12.17 GB",
-                "date": "2021-04-03",
-                "tags": ["Facebook", "Social Media", "Phone Numbers", "Personal Data", "Scraping", "2021"]
+                id: 1,
+                company: "Equifax",
+                year: 2017,
+                records: 147000000,
+                severity: "high",
+                type: "Credit Bureau",
+                description: "Personal information of 147 million consumers exposed including SSNs, birth dates, addresses, and driver's license numbers.",
+                downloadUrl: "https://mega.nz/file/example1",
+                password: "equifax2017!",
+                size: "2.3 GB",
+                date: "2017-09-07",
+                tags: ["SSN", "Personal Data", "Credit"]
+            },
+            {
+                id: 2,
+                company: "Yahoo",
+                year: 2013,
+                records: 3000000000,
+                severity: "high",
+                type: "Web Services",
+                description: "All 3 billion Yahoo accounts compromised. Names, email addresses, telephone numbers, dates of birth, hashed passwords, and security questions exposed.",
+                downloadUrl: "https://drive.google.com/file/d/example2",
+                password: "yahoo_breach_2013",
+                size: "5.7 GB",
+                date: "2013-08-01",
+                tags: ["Email", "Passwords", "Personal Data"]
+            },
+            {
+                id: 3,
+                company: "Marriott",
+                year: 2018,
+                records: 500000000,
+                severity: "high",
+                type: "Hospitality",
+                description: "Guest information from Starwood hotels database including names, addresses, phone numbers, email addresses, passport numbers, and payment card information.",
+                downloadUrl: "https://dropbox.com/s/example3",
+                password: "marriott_starwood18",
+                size: "1.8 GB",
+                date: "2018-11-30",
+                tags: ["Travel", "Payment Cards", "Passports"]
+            },
+            {
+                id: 4,
+                company: "Capital One",
+                year: 2019,
+                records: 100000000,
+                severity: "medium",
+                type: "Financial",
+                description: "Personal information of credit card customers and applicants including names, addresses, credit scores, payment history, and fragments of transaction data.",
+                downloadUrl: "https://mega.nz/file/example4",
+                password: "capital1_2019",
+                size: "890 MB",
+                date: "2019-07-19",
+                tags: ["Credit Cards", "Financial", "Credit Scores"]
+            },
+            {
+                id: 5,
+                company: "Facebook",
+                year: 2019,
+                records: 533000000,
+                severity: "medium",
+                type: "Social Media",
+                description: "Phone numbers, Facebook IDs, full names, locations, birthdates, bios, and email addresses of Facebook users from 106 countries.",
+                downloadUrl: "https://drive.google.com/file/d/example5",
+                password: "fb_leak2019",
+                size: "1.2 GB",
+                date: "2019-04-03",
+                tags: ["Social Media", "Phone Numbers", "Personal Data"]
+            },
+            {
+                id: 6,
+                company: "LinkedIn",
+                year: 2021,
+                records: 700000000,
+                severity: "medium",
+                type: "Professional Network",
+                description: "Scraped data including email addresses, phone numbers, workplace information, full names, account IDs, and links to social media accounts.",
+                downloadUrl: "https://dropbox.com/s/example6",
+                password: "linkedin_scrape21",
+                size: "2.1 GB",
+                date: "2021-06-22",
+                tags: ["Professional", "Email", "Phone Numbers"]
+            },
+            {
+                id: 7,
+                company: "T-Mobile",
+                year: 2021,
+                records: 54000000,
+                severity: "high",
+                type: "Telecommunications",
+                description: "Names, dates of birth, SSNs, and driver's license information of current, former and prospective T-Mobile customers.",
+                downloadUrl: "https://mega.nz/file/example7",
+                password: "tmobile_breach21",
+                size: "650 MB",
+                date: "2021-08-17",
+                tags: ["Telecom", "SSN", "Driver's License"]
+            },
+            {
+                id: 8,
+                company: "Clubhouse",
+                year: 2021,
+                records: 1300000,
+                severity: "low",
+                type: "Social Audio",
+                description: "User profile information including names, usernames, photo URLs, follower counts, and account creation dates.",
+                downloadUrl: "https://drive.google.com/file/d/example8",
+                password: "clubhouse_2021",
+                size: "45 MB",
+                date: "2021-04-11",
+                tags: ["Social Media", "Audio", "Profiles"]
             }
         ];
     }
@@ -456,16 +555,25 @@ class BreachArchive {
         const totalBreaches = this.breaches.length;
         const totalRecords = this.breaches.reduce((sum, breach) => sum + breach.records, 0);
         const totalCompanies = new Set(this.breaches.map(breach => breach.company)).size;
+        const highSeverity = this.breaches.filter(breach => breach.severity === 'high').length;
+        const mediumSeverity = this.breaches.filter(breach => breach.severity === 'medium').length;
+        const lowSeverity = this.breaches.filter(breach => breach.severity === 'low').length;
         
         // Animate counters
-        this.animateCounter('total-breaches', totalBreaches);
-        this.animateCounter('total-records', totalRecords, true);
-        this.animateCounter('total-companies', totalCompanies);
+        this.animateCounter("stats-total-breaches", totalBreaches);
+        this.animateCounter("stats-total-records", totalRecords, true);
+        this.animateCounter("stats-total-companies", totalCompanies);
+        this.animateCounter("stats-high-severity", highSeverity);
+        this.animateCounter("stats-medium-severity", mediumSeverity);
+        this.animateCounter("stats-low-severity", lowSeverity);
     }
 
     animateCounter(elementId, target, isLarge = false) {
         const element = document.getElementById(elementId);
-        if (!element) return;
+        if (!element) {
+            console.log(`Element with ID '${elementId}' not found`);
+            return;
+        }
 
         let current = 0;
         const increment = target / 100;
